@@ -4,8 +4,9 @@ import java.util.ArrayList;
 
 public class Student {
 
-  private   String name;
-    private int id;
+    private int getId;
+    private String name;
+    private int Id;
     private String major;
     private int age;
     private double gpa;
@@ -19,8 +20,8 @@ public class Student {
     public String getName() {
         return name;
     }
-    public void setId(int id) {
-        this.id = id;
+    public int getId() {
+        return Id;
     }
     public void setAge(int age) {
         this.age = age;
