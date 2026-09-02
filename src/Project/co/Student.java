@@ -1,11 +1,14 @@
 package Project.co;
 
+import java.util.ArrayList;
+
 public class Student {
+
   private   String name;
     private int id;
     private String major;
     private int age;
-    private int gpa;
+    private double gpa;
 
     public void student() {
 
@@ -34,7 +37,7 @@ public class Student {
     public void setGpa(int gpa) {
         this.name = name;
     }
-    public int getGpa() {
+    public double getGpa() {
         return gpa;
     }
 
