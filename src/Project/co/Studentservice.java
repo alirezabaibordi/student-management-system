@@ -26,4 +26,18 @@ public class Studentservice extends Student {
         }
         return null;
     }
+    public Student Updatestudent(String name, int Id, String major, int age, double gpa) {
+        ُStudent student = FindbyId(Id);
+        if(student == null ) {
+            return null;
+        }
+        else {
+            student.setName(name);
+            student.setAge(age);
+            student.setMajor(major);
+            student.setGpa(gpa);
+        }
+
+
+    }
 }

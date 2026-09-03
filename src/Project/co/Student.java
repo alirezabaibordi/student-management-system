@@ -35,7 +35,7 @@ public class Student {
     public String getMajor() {
         return major;
     }
-    public void setGpa(int gpa) {
+    public void setGpa(double gpa) {
         this.name = name;
     }
     public double getGpa() {
