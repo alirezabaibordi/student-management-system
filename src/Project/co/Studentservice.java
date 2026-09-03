@@ -40,4 +40,17 @@ public class Studentservice extends Student {
 
 
     }
+    public boolean Deletestudent(int Id) {
+        Student student = FindbyId(Id);
+        if (student == null) {
+            return false;
+        }
+        else {
+            students.remove(student);
+
+        }
+        return true;
+
+
+    }
 }
