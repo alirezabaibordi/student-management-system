@@ -53,4 +53,18 @@ public class Studentservice extends Student {
 
 
     }
+    public double CaculateAvgGpa() {
+        double result;
+        if (students.isEmpty()) {
+            return 0.0;
+        }
+        else {
+            double sumGpa = 0;
+            for (Student student: students) {
+                sumGpa =+ student.getGpa();
+            }
+             result =  sumGpa / students.size();
+        }
+        return result;
+    }
 }
