@@ -11,7 +11,12 @@ public class Student {
     private int age;
     private double gpa;
 
-    public void student() {
+    public Student(int Id, String name, int age, String major, double gpa) {
+        this.Id = Id;
+        this.name = name;
+        this.age = age;
+        this.major = major;
+        this.gpa = gpa;
 
     }
     public void setName(String name) {
@@ -40,6 +45,11 @@ public class Student {
     }
     public double getGpa() {
         return gpa;
+    }
+    @Override
+    public String toString() {
+        return name + "Age: " + age + "Major: " + major + "GPA: " + gpa;
+
     }
 
 

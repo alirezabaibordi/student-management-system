@@ -1,22 +1,25 @@
 package Project.co;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class Studentservice extends Student {
+public class Studentservice  {
     private ArrayList<Student> students = new ArrayList<>();
     private int nextId = 0;
-    public Student Addsutdent(int nextId, String name, int Id, int age, String major, double gpa) {
-        Student newStudent = new Student();
+    public Student Addsutdent(String name, int age, String major, double gpa) {
+        Student newStudent = new Student(nextId, name, age, major, gpa);
         students.add(newStudent);
         nextId++;
         return newStudent;
     }
-    public Student Getallstudent() {
+    public int getNextId() {
+        return nextId;
+    }
+    public List<Student> Getallstudent() {
         for (Student student : students) {
             System.out.println(student);
-
         }
-        return null;
+        return students;
     }
     public Student FindbyId(int Id) {
         for (Student student : students) {
@@ -26,8 +29,8 @@ public class Studentservice extends Student {
         }
         return null;
     }
-    public Student Updatestudent(String name, int Id, String major, int age, double gpa) {
-        ُStudent student = FindbyId(Id);
+    public Student Updatestudent(int Id, String name, String major, int age, double gpa) {
+        Student student = FindbyId(Id);
         if(student == null ) {
             return null;
         }
@@ -39,6 +42,7 @@ public class Studentservice extends Student {
         }
 
 
+        return student;
     }
     public boolean Deletestudent(int Id) {
         Student student = FindbyId(Id);
@@ -53,13 +57,13 @@ public class Studentservice extends Student {
 
 
     }
-    public double CaculateAvgGpa() {
+    public double CalculateAvgGpa() {
         double result;
         if (students.isEmpty()) {
             return 0.0;
         }
         else {
-            double sumGpa = 0;
+            double sumGpa = 0.0;
             for (Student student: students) {
                 sumGpa =+ student.getGpa();
             }
