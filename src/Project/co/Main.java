@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        
+
          Studentservice studentservice = new Studentservice();
         Scanner input = new Scanner(System.in);
 
@@ -22,13 +22,10 @@ public class Main {
         int choose = input.nextInt();
         String a = input.nextLine();
 
-        if (choose == 7) {
-            System.out.println("Finish the process");
-        }
-
         while(true) {
 
 
+            //Add student
             if (choose == 1) {
                 System.out.println("Please enter name:");
                 String addname = input.nextLine();
@@ -39,15 +36,17 @@ public class Main {
                 String addmajor = input.nextLine();
                 System.out.println("Please enter gpa:");
                 double addgpa = input.nextDouble();
-                studentservice.Addsutdent(addname, addage, addmajor, addgpa);
+                Student newstudent = studentservice.Addsutdent(addname, addage, addmajor, addgpa);
                 System.out.print(" the ID of " + addname + " is: ");
-                System.out.println(studentservice.getNextId());
+                System.out.println(newstudent.getId());
 
             }
+            // Get all atudent
             else if (choose == 2) {
                 studentservice.Getallstudent();
 
             }
+            //Find by ID
             else if (choose == 3) {
               System.out.println("Please enter ID to find the student:");
               int inputeID = input.nextInt();
@@ -56,35 +55,39 @@ public class Main {
                 System.out.println("There is no student with this ID");
               }
               else {
-                System.out.println(student);
+                System.out.println("ID: " + student);
               }
              
 
-            }
+            } 
+            // Update student
             else if (choose == 4) {
                 System.out.println("Please enter ID to find the student:");
                 int findID = input.nextInt();
                 String c = input.nextLine();
                 System.out.println("Please enter new name:");
                 String newname = input.nextLine();
+                System.out.println("Please enter new age:");
+                int newage = input.nextInt();
                 String d = input.nextLine();
                 System.out.println("please enter new major:");
                 String newmajor = input.nextLine();
-                System.out.println("Please enter new age:");
-                int newage = input.nextInt();
                 System.out.println("Please enter new gpa");
                 double newgpa = input.nextDouble();
-                studentservice.Updatestudent(findID, newname, newmajor, newage, newgpa);
+                studentservice.Updatestudent(findID, newname, newage, newmajor, newgpa);
 
-            }
+            } 
+            // Delete student
             else if (choose == 5) {
                 System.out.println("Please enter ID:");
-                int deleteID = input.nextInt();
-                studentservice.Deletestudent(deleteID);
-            }
+                int id = input.nextInt();
+                studentservice.Deletestudent(id);
+            } 
+            //Calculate avg gpa
             else if (choose == 6) {
-                studentservice.CalculateAvgGpa();
-            }
+                System.out.println(studentservice.CalculateAvgGpa());
+            } 
+            //Finish
             else if (choose == 7) {
                 System.out.println("Finish the process");
                 break;

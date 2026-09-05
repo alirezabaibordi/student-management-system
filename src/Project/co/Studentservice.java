@@ -3,9 +3,9 @@ package Project.co;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Studentservice  {
+public class Studentservice {
     private ArrayList<Student> students = new ArrayList<>();
-    private int nextId = 0;
+    private int nextId = 1;
     
     public Student Addsutdent(String name, int age, String major, double gpa) {
         Student newStudent = new Student(nextId, name, age, major, gpa);
@@ -30,7 +30,7 @@ public class Studentservice  {
         }
         return null;
     }
-    public Student Updatestudent(int Id, String name, String major, int age, double gpa) {
+    public Student Updatestudent(int Id, String name, int age, String major, double gpa) {
         Student student = FindbyId(Id);
         if(student == null ) {
             return null;
@@ -66,7 +66,7 @@ public class Studentservice  {
         else {
             double sumGpa = 0.0;
             for (Student student: students) {
-                sumGpa =+ student.getGpa();
+                sumGpa += student.getGpa();
             }
              result =  sumGpa / students.size();
         }

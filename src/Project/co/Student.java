@@ -41,14 +41,14 @@ public class Student {
         return major;
     }
     public void setGpa(double gpa) {
-        this.name = name;
+        this.gpa = gpa;
     }
     public double getGpa() {
         return gpa;
     }
     @Override
     public String toString() {
-        return name + "   Age:" + age + "   Major:" + major + "   GPA:" + gpa;
+        return name + "   ID:"+ Id +"   Age:" + age + "   Major:" + major + "   GPA:" + gpa;
 
     }
 
