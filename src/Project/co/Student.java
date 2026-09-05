@@ -48,7 +48,7 @@ public class Student {
     }
     @Override
     public String toString() {
-        return name + "Age: " + age + "Major: " + major + "GPA: " + gpa;
+        return name + "   Age:" + age + "   Major:" + major + "   GPA:" + gpa;
 
     }
 

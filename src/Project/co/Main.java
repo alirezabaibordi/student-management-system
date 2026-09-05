@@ -1,10 +1,11 @@
 package Project.co;
 
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Student student = new Student();
+        
          Studentservice studentservice = new Studentservice();
         Scanner input = new Scanner(System.in);
 
@@ -48,7 +49,16 @@ public class Main {
 
             }
             else if (choose == 3) {
-                studentservice.FindbyId(student.getId());
+              System.out.println("Please enter ID to find the student:");
+              int inputeID = input.nextInt();
+              Student student = studentservice.FindbyId(inputeID);
+              if (student == null) {
+                System.out.println("There is no student with this ID");
+              }
+              else {
+                System.out.println(student);
+              }
+             
 
             }
             else if (choose == 4) {
