@@ -1,12 +1,11 @@
 package Project.co;
 
-
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-         Studentservice studentservice = new Studentservice();
+        Studentservice studentservice = new Studentservice();
         Scanner input = new Scanner(System.in);
 
         System.out.println("WELCOME");
@@ -18,14 +17,14 @@ public class Main {
         System.out.println("5. Delete student");
         System.out.println("6. Calculate average GPA");
         System.out.println("7. Finish");
+        System.out.println();
 
         int choose = input.nextInt();
         String a = input.nextLine();
 
-        while(true) {
+        while (true) {
 
-
-            //Add student
+            // Add student
             if (choose == 1) {
                 System.out.println("Please enter name:");
                 String addname = input.nextLine();
@@ -46,20 +45,18 @@ public class Main {
                 studentservice.Getallstudent();
 
             }
-            //Find by ID
+            // Find by ID
             else if (choose == 3) {
-              System.out.println("Please enter ID to find the student:");
-              int inputeID = input.nextInt();
-              Student student = studentservice.FindbyId(inputeID);
-              if (student == null) {
-                System.out.println("There is no student with this ID");
-              }
-              else {
-                System.out.println("ID: " + student);
-              }
-             
+                System.out.println("Please enter ID to find the student:");
+                int inputeID = input.nextInt();
+                Student student = studentservice.FindbyId(inputeID);
+                if (student == null) {
+                    System.out.println("There is no student with this ID");
+                } else {
+                    System.out.println("ID: " + student);
+                }
 
-            } 
+            }
             // Update student
             else if (choose == 4) {
                 System.out.println("Please enter ID to find the student:");
@@ -76,23 +73,34 @@ public class Main {
                 double newgpa = input.nextDouble();
                 studentservice.Updatestudent(findID, newname, newage, newmajor, newgpa);
 
-            } 
+            }
             // Delete student
             else if (choose == 5) {
                 System.out.println("Please enter ID:");
                 int id = input.nextInt();
                 studentservice.Deletestudent(id);
-            } 
-            //Calculate avg gpa
+            }
+            // Calculate avg gpa
             else if (choose == 6) {
                 System.out.println(studentservice.CalculateAvgGpa());
-            } 
-            //Finish
+            }
+            // Finish
             else if (choose == 7) {
                 System.out.println("Finish the process");
                 break;
             }
             System.out.println("What do you want to do next?");
+            System.out.println();
+            System.out.println("What do you want to do? (Just choose a number)");
+            System.out.println("1. Add student");
+            System.out.println("2. Get all student");
+            System.out.println("3. Find student by ID");
+            System.out.println("4. Update student");
+            System.out.println("5. Delete student");
+            System.out.println("6. Calculate average GPA");
+            System.out.println("7. Finish");
+            System.out.println();
+
             choose = input.nextInt();
             String e = input.nextLine();
         }
